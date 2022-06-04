@@ -51,7 +51,7 @@ Use Planning to search for minimal-cost ρ’
 ** Initial State: all automata in their starting state
 ** Goal: all automata in a final state
 * Solution
-** Minimal-cost goal-reaching sequence of actions![image](https://user-images.githubusercontent.com/49659959/172026140-557ab8bc-863c-4e26-a8f7-101832d2b8a4.png)
+** Minimal-cost goal-reaching sequence of actions
 
 In the PDDL domain we have 3 actions: add, del and sync. The latter one has cost 0 and stands for no change, while the first two have cost 1 and are used to add or remove elements in the trace with the aim of obtaining a correct trace which satisfies all the constraints. The goal is to repair all the traces with the minimal cost, that is, we want to reach the accepting states for both the trace and the constraint automata minimizing the total cost.
 
