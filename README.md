@@ -4,7 +4,7 @@ Repository for the project of Reasoning Agents module (EAI exam)
 
 ## 1 - Introduction
 
-This repository contains the project for the course of Reasoning Agents 2022, Sapienza University of Rome, held by Prof. Fabio Patrizi. The tutor of our project is  Dott. Francesco Fuggitti.
+This repository contains the project for the course of Reasoning Agents 2022, Sapienza University of Rome, held by Prof. Fabio Patrizi. The tutor of this project is  Dott. Francesco Fuggitti.
 
 ## 2 - Problem
 
@@ -55,3 +55,12 @@ Use Planning to search for minimal-cost ρ’
 
 In the PDDL domain there are 3 actions: add, del and sync. The sync one has cost 0 and stands for no change, while the first two have cost 1 and are used to add or remove events in the trace with the aim of obtaining a correct trace which satisfies all the constraints. The goal is to repair all the traces with the minimal cost, that is, we want to reach the accepting states for both the trace and the constraint automata minimizing the total cost.
 
+In this project I used LTLf2DFA tool which transforms an LTL-f formula into a minimal Deterministic Finite state Automaton (DFA). Thanks to MONA each constraint automaton is translated into an interpretation of 0,1,X for transitions. In this way, is possible to sum up the elements of each label and handle the transitions according to the result of the sum:
+
+* if sum > 1, discard that transition because I work with BP log traces (singleton) so is admitted to have only one true symbol per time
+* if sum = 1, then I get the corresponding symbol and build only the transition for this element
+* if sum = 0, then I save the symbols which are negated, building the "positive transitions" for all the symbols of both the trace and the constraint except those that must be negated
+
+Important changes from the MONA output transitions when I encode the PDDL problem:
+* Remove the state 0 (which goes to state 1 with any symbol) of any constraint and use state 1 as initial state (is an error to consider it!)
+* Remove the transitions from the i-th state to the i-th state
