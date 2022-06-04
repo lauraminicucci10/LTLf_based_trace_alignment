@@ -44,9 +44,9 @@ Find minimal-cost ρ’ s.t. is accepted by T+ && A+ (satisfies both)
 
 Use Planning to search for minimal-cost ρ’
 * Domain
-** Models product automaton T+ x A+ 
-** add and del actions with positive cost (changes of input trace)
-** sync actions with null cost model events
+*   Models product automaton T+ x A+ 
+*   add and del actions with positive cost (changes of input trace)
+*   sync actions with null cost model events
 * Problem
 ** Initial State: all automata in their starting state
 ** Goal: all automata in a final state
