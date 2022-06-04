@@ -14,11 +14,11 @@ The work is focused on the problem of Trace Alignment in Bussiness Process (BP) 
 
 1. Follow the logaut installation guide at: https://github.com/whitemech/logaut
 
-2. Modify the file usr/local/bin/lydia with: docker run -v "$(pwd)":/home/default whitemech/lydia lydia "$@"
+2. Modify the file `usr/local/bin/lydia` with: `docker run -v "$(pwd)":/home/default whitemech/lydia lydia "$@"`
 
-3. Install LTLf2DFA: pip install git+https://github.com/whitemech/LTLf2DFA.git@develop#egg=ltlf2dfa
+3. Install LTLf2DFA: `pip install git+https://github.com/whitemech/LTLf2DFA.git@develop#egg=ltlf2dfa`
 
-4. Install MONA: sudo apt install mona
+4. Install MONA: `sudo apt install mona`
 
 5. Install Fast-Downward from https://www.fast-downward.org/ObtainingAndRunningFastDownward
 
